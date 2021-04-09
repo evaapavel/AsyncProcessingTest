@@ -56,25 +56,25 @@ namespace AsyncProcessingMain.AsyncBreakfast
 
             clock.Start("Toast");
             // ***
-            Task<Toast> toastTask = ToastBreadAsync(2);
-            //Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
+            //Task<Toast> toastTask = ToastBreadAsync(2);
+            Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
 
 
-            //Egg eggs = await eggsTask;
-            //Console.WriteLine("eggs are ready");
-            //// ***
-            //clock.Stop("Egg");
+            Egg eggs = await eggsTask;
+            Console.WriteLine("eggs are ready");
+            // ***
+            clock.Stop("Egg");
 
 
-            //Bacon bacon = await baconTask;
-            //Console.WriteLine("bacon is ready");
-            //// ***
-            //clock.Stop("Bacon");
+            Bacon bacon = await baconTask;
+            Console.WriteLine("bacon is ready");
+            // ***
+            clock.Stop("Bacon");
 
 
             Toast toast = await toastTask;
-            ApplyButter(toast);
-            ApplyJam(toast);
+            //ApplyButter(toast);
+            //ApplyJam(toast);
             Console.WriteLine("toast is ready");
             // ***
             clock.Stop("Toast");
@@ -116,16 +116,16 @@ namespace AsyncProcessingMain.AsyncBreakfast
             clock.Stop("Juice");
 
 
-            Egg eggs = await eggsTask;
-            Console.WriteLine("eggs are ready");
-            // ***
-            clock.Stop("Egg");
+            //Egg eggs = await eggsTask;
+            //Console.WriteLine("eggs are ready");
+            //// ***
+            //clock.Stop("Egg");
 
 
-            Bacon bacon = await baconTask;
-            Console.WriteLine("bacon is ready");
-            // ***
-            clock.Stop("Bacon");
+            //Bacon bacon = await baconTask;
+            //Console.WriteLine("bacon is ready");
+            //// ***
+            //clock.Stop("Bacon");
 
 
             Console.WriteLine("Breakfast is ready!");
