@@ -39,7 +39,8 @@ namespace AsyncProcessingMain.AsyncBreakfast
             DisplayLineOfTimeStats("Breakfast", clock);
             // ***
             DisplayLineOfTimeStats("Coffee", clock);
-            DisplayLineOfTimeStats("Eggs", clock);
+            //DisplayLineOfTimeStats("Eggs", clock);
+            DisplayLineOfTimeStats("Egg", "Eggs", clock);
             DisplayLineOfTimeStats("Bacon", clock);
             DisplayLineOfTimeStats("Toast", clock);
             DisplayLineOfTimeStats("Juice", clock);
@@ -49,10 +50,19 @@ namespace AsyncProcessingMain.AsyncBreakfast
 
 
         //private static void DisplayLineOfTimeStats(string taskName, Stopwatch taskTook)
-        private static void DisplayLineOfTimeStats(string taskName, MultiStopwatch clock)
+        //private static void DisplayLineOfTimeStats(string taskName, MultiStopwatch clock)
+        private static void DisplayLineOfTimeStats(string taskName, string taskDisplay, MultiStopwatch clock)
         {
             Stopwatch taskTook = clock.Get(taskName);
-            Console.WriteLine($"{taskName,11} started at {taskTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {taskTook.Seconds,2} seconds and {taskTook.Milliseconds,4} milliseconds.");
+            //Console.WriteLine($"{taskName,11} started at {taskTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {taskTook.Seconds,2} seconds and {taskTook.Milliseconds,4} milliseconds.");
+            Console.WriteLine($"{taskDisplay,11} started at {taskTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {taskTook.Seconds,2} seconds and {taskTook.Milliseconds,4} milliseconds.");
+        }
+
+
+
+        private static void DisplayLineOfTimeStats(string taskName, MultiStopwatch clock)
+        {
+            DisplayLineOfTimeStats(taskName, taskName, clock);
         }
 
 
