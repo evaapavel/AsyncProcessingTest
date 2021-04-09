@@ -41,15 +41,38 @@ namespace AsyncProcessingMain.AsyncBreakfast
 
 
 
+        public Stopwatch Stop(string id)
+        {
+            if (!stopwatches.ContainsKey(id))
+            {
+                throw new ArgumentException($"Stopwatch \'{id}\' not found.", "id");
+            }
+            Stopwatch stopwatch = stopwatches[id];
+            stopwatch.Stop();
+            return stopwatch;
+        }
+
+
+
         public TimeSpan StopAndGetTook(string id)
+        {
+            return Stop(id).Took;
+        }
+
+
+
+        public Stopwatch Get(string id)
         {
             if ( ! stopwatches.ContainsKey(id) )
             {
                 throw new ArgumentException($"Stopwatch \'{id}\' not found.", "id");
             }
             Stopwatch stopwatch = stopwatches[id];
-            stopwatch.Stop();
-            return stopwatch.Took;
+            if ( stopwatch.IsRunning )
+            {
+                throw new InvalidOperationException($"Stopwatch \'{id}\' is running. You cannot access it until you stop it.");
+            }
+            return stopwatch;
         }
 
 

@@ -25,7 +25,8 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Coffee cup = PourCoffee();
             Console.WriteLine("coffee is ready");
             // ***
-            TimeSpan coffeeTook = clock.StopAndGetTook("Coffee");
+            //TimeSpan coffeeTook = clock.StopAndGetTook("Coffee");
+            Stopwatch coffeeTook = clock.Stop("Coffee");
 
 
             clock.Start("Egg");
@@ -33,7 +34,8 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Egg eggs = FryEggs(2);
             Console.WriteLine("eggs are ready");
             // ***
-            TimeSpan eggsTook = clock.StopAndGetTook("Egg");
+            //TimeSpan eggsTook = clock.StopAndGetTook("Egg");
+            Stopwatch eggsTook = clock.Stop("Egg");
 
 
             clock.Start("Bacon");
@@ -41,7 +43,8 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Bacon bacon = FryBacon(3);
             Console.WriteLine("bacon is ready");
             // ***
-            TimeSpan baconTook = clock.StopAndGetTook("Bacon");
+            //TimeSpan baconTook = clock.StopAndGetTook("Bacon");
+            Stopwatch baconTook = clock.Stop("Bacon");
 
 
             clock.Start("Toast");
@@ -51,7 +54,8 @@ namespace AsyncProcessingMain.AsyncBreakfast
             ApplyJam(toast);
             Console.WriteLine("toast is ready");
             // ***
-            TimeSpan toastTook = clock.StopAndGetTook("Toast");
+            //TimeSpan toastTook = clock.StopAndGetTook("Toast");
+            Stopwatch toastTook = clock.Stop("Toast");
 
 
             clock.Start("Juice");
@@ -59,20 +63,27 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Juice oj = PourOJ();
             Console.WriteLine("oj is ready");
             // ***
-            TimeSpan juiceTook = clock.StopAndGetTook("Juice");
+            //TimeSpan juiceTook = clock.StopAndGetTook("Juice");
+            Stopwatch juiceTook = clock.Stop("Juice");
 
 
             Console.WriteLine("Breakfast is ready!");
 
             DateTime breakfastDone = DateTime.Now;
             TimeSpan breakfastTook = breakfastDone.Subtract(breakfastStart);
-            Console.WriteLine($"Breakfast took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
+            //Console.WriteLine($"Breakfast took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Breakfast started at {breakfastStart.ToString("dd.MM.yyyy HH:mm:ss.fff")} and took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
             // ***
-            Console.WriteLine($"Coffee took {coffeeTook.Seconds} seconds and {coffeeTook.Milliseconds} milliseconds.");
-            Console.WriteLine($"Eggs took {eggsTook.Seconds} seconds and {eggsTook.Milliseconds} milliseconds.");
-            Console.WriteLine($"Bacon took {baconTook.Seconds} seconds and {baconTook.Milliseconds} milliseconds.");
-            Console.WriteLine($"Toast took {toastTook.Seconds} seconds and {toastTook.Milliseconds} milliseconds.");
-            Console.WriteLine($"Juice took {juiceTook.Seconds} seconds and {juiceTook.Milliseconds} milliseconds.");
+            //Console.WriteLine($"Coffee took {coffeeTook.Seconds} seconds and {coffeeTook.Milliseconds} milliseconds.");
+            //Console.WriteLine($"Eggs took {eggsTook.Seconds} seconds and {eggsTook.Milliseconds} milliseconds.");
+            //Console.WriteLine($"Bacon took {baconTook.Seconds} seconds and {baconTook.Milliseconds} milliseconds.");
+            //Console.WriteLine($"Toast took {toastTook.Seconds} seconds and {toastTook.Milliseconds} milliseconds.");
+            //Console.WriteLine($"Juice took {juiceTook.Seconds} seconds and {juiceTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Coffee started at {coffeeTook.StartTime.ToString("dd.MM.yyyy HH:mm:ss.fff")} and took {coffeeTook.Seconds} seconds and {coffeeTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Eggs started at {eggsTook.StartTime.ToString("dd.MM.yyyy HH:mm:ss.fff")} and took {eggsTook.Seconds} seconds and {eggsTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Bacon started at {baconTook.StartTime.ToString("dd.MM.yyyy HH:mm:ss.fff")} and took {baconTook.Seconds} seconds and {baconTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Toast started at {toastTook.StartTime.ToString("dd.MM.yyyy HH:mm:ss.fff")} and took {toastTook.Seconds} seconds and {toastTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Juice started at {juiceTook.StartTime.ToString("dd.MM.yyyy HH:mm:ss.fff")} and took {juiceTook.Seconds} seconds and {juiceTook.Milliseconds} milliseconds.");
 
         }
 
