@@ -45,23 +45,8 @@ namespace AsyncProcessingMain.AsyncBreakfast
             // ***
             //Toast toast = ToastBread(2);
             //Toast toast = await ToastBreadAsync(2);
-            Task<Toast> toastTask = ToastBreadAsync(2);
-
-
-            Toast toast = await toastTask;
-            ApplyButter(toast);
-            ApplyJam(toast);
-            Console.WriteLine("toast is ready");
-            // ***
-            TimeSpan toastTook = clock.StopAndGetTook("Toast");
-
-
-            clock.Start("Juice");
-            // ***
-            Juice oj = PourOJ();
-            Console.WriteLine("oj is ready");
-            // ***
-            TimeSpan juiceTook = clock.StopAndGetTook("Juice");
+            //Task<Toast> toastTask = ToastBreadAsync(2);
+            Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
 
 
             Egg eggs = await eggsTask;
@@ -74,6 +59,22 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Console.WriteLine("bacon is ready");
             // ***
             TimeSpan baconTook = clock.StopAndGetTook("Bacon");
+
+
+            Toast toast = await toastTask;
+            //ApplyButter(toast);
+            //ApplyJam(toast);
+            Console.WriteLine("toast is ready");
+            // ***
+            TimeSpan toastTook = clock.StopAndGetTook("Toast");
+
+
+            clock.Start("Juice");
+            // ***
+            Juice oj = PourOJ();
+            Console.WriteLine("oj is ready");
+            // ***
+            TimeSpan juiceTook = clock.StopAndGetTook("Juice");
 
 
             Console.WriteLine("Breakfast is ready!");
@@ -133,6 +134,17 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Console.WriteLine("Remove toast from the toaster");
 
             return new Toast();
+        }
+
+
+
+        private static async Task<Toast> MakeToastWithButterAndJamAsync(int number)
+        {
+            var toast = await ToastBreadAsync(number);
+            ApplyButter(toast);
+            ApplyJam(toast);
+
+            return toast;
         }
 
 
