@@ -52,6 +52,7 @@
     <Compile Include="AsyncBreakfast\Juice.cs" />
     <Compile Include="AsyncBreakfast\MultiStopwatch.cs" />
     <Compile Include="AsyncBreakfast\ProcessConstants.cs" />
+    <Compile Include="AsyncBreakfast\ProcessHelpers.cs" />
     <Compile Include="AsyncBreakfast\Stopwatch.cs" />
     <Compile Include="AsyncBreakfast\Toast.cs" />
     <Compile Include="Program.cs" />

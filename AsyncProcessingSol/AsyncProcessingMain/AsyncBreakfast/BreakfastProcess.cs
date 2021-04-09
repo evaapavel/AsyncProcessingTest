@@ -16,8 +16,11 @@ namespace AsyncProcessingMain.AsyncBreakfast
         public static void MakeBreakfast()
         {
 
-            DateTime breakfastStart = DateTime.Now;
+            //DateTime breakfastStart = DateTime.Now;
             MultiStopwatch clock = new MultiStopwatch();
+
+            clock.Start("Breakfast");
+            // ***
 
 
             clock.Start("Coffee");
@@ -68,11 +71,14 @@ namespace AsyncProcessingMain.AsyncBreakfast
 
 
             Console.WriteLine("Breakfast is ready!");
+            // ***
+            Stopwatch breakfastTook = clock.Stop("Breakfast");
 
-            DateTime breakfastDone = DateTime.Now;
-            TimeSpan breakfastTook = breakfastDone.Subtract(breakfastStart);
+            //DateTime breakfastDone = DateTime.Now;
+            //TimeSpan breakfastTook = breakfastDone.Subtract(breakfastStart);
             //Console.WriteLine($"Breakfast took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
-            Console.WriteLine($"Breakfast started at {breakfastStart.ToString(ProcessConstants.DateTimeFormatString)} and took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
+            //Console.WriteLine($"Breakfast started at {breakfastStart.ToString(ProcessConstants.DateTimeFormatString)} and took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Breakfast started at {breakfastTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
             // ***
             //Console.WriteLine($"Coffee took {coffeeTook.Seconds} seconds and {coffeeTook.Milliseconds} milliseconds.");
             //Console.WriteLine($"Eggs took {eggsTook.Seconds} seconds and {eggsTook.Milliseconds} milliseconds.");
