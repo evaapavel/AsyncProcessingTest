@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="AsyncBreakfast\Bacon.cs" />
     <Compile Include="AsyncBreakfast\BreakfastProcess.cs" />
+    <Compile Include="AsyncBreakfast\BreakfastProcessAsync.cs" />
     <Compile Include="AsyncBreakfast\Coffee.cs" />
     <Compile Include="AsyncBreakfast\Egg.cs" />
     <Compile Include="AsyncBreakfast\Juice.cs" />
