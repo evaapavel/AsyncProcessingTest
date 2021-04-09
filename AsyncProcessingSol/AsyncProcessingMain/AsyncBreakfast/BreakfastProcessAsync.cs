@@ -18,6 +18,7 @@ namespace AsyncProcessingMain.AsyncBreakfast
 
             MultiStopwatch clock = new MultiStopwatch();
 
+
             clock.Start("Breakfast");
             // ***
 
@@ -101,6 +102,7 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Console.WriteLine("Breakfast is ready!");
             // ***
             clock.Stop("Breakfast");
+
 
             ProcessHelpers.DisplayTimeStats(clock);
 
