@@ -20,7 +20,8 @@ namespace AsyncProcessingMain
 
             //Console.WriteLine("Press a key to finish...");
             //Console.ReadKey(true);
-            BreakfastProcess.MakeBreakfast();
+            //BreakfastProcess.MakeBreakfast();
+            BreakfastProcess.MakeBreakfastAsync();
         }
 
 
