@@ -16,7 +16,6 @@ namespace AsyncProcessingMain.AsyncBreakfast
         public static void MakeBreakfast()
         {
 
-            //DateTime breakfastStart = DateTime.Now;
             MultiStopwatch clock = new MultiStopwatch();
 
             clock.Start("Breakfast");
@@ -28,8 +27,6 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Coffee cup = PourCoffee();
             Console.WriteLine("coffee is ready");
             // ***
-            //TimeSpan coffeeTook = clock.StopAndGetTook("Coffee");
-            //Stopwatch coffeeTook = clock.Stop("Coffee");
             clock.Stop("Coffee");
 
 
@@ -38,8 +35,6 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Egg eggs = FryEggs(2);
             Console.WriteLine("eggs are ready");
             // ***
-            //TimeSpan eggsTook = clock.StopAndGetTook("Egg");
-            //Stopwatch eggsTook = clock.Stop("Egg");
             clock.Stop("Egg");
 
 
@@ -48,8 +43,6 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Bacon bacon = FryBacon(3);
             Console.WriteLine("bacon is ready");
             // ***
-            //TimeSpan baconTook = clock.StopAndGetTook("Bacon");
-            //Stopwatch baconTook = clock.Stop("Bacon");
             clock.Stop("Bacon");
 
 
@@ -60,8 +53,6 @@ namespace AsyncProcessingMain.AsyncBreakfast
             ApplyJam(toast);
             Console.WriteLine("toast is ready");
             // ***
-            //TimeSpan toastTook = clock.StopAndGetTook("Toast");
-            //Stopwatch toastTook = clock.Stop("Toast");
             clock.Stop("Toast");
 
 
@@ -70,32 +61,12 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Juice oj = PourOJ();
             Console.WriteLine("oj is ready");
             // ***
-            //TimeSpan juiceTook = clock.StopAndGetTook("Juice");
-            //Stopwatch juiceTook = clock.Stop("Juice");
             clock.Stop("Juice");
 
 
             Console.WriteLine("Breakfast is ready!");
             // ***
-            //Stopwatch breakfastTook = clock.Stop("Breakfast");
             clock.Stop("Breakfast");
-
-            ////DateTime breakfastDone = DateTime.Now;
-            ////TimeSpan breakfastTook = breakfastDone.Subtract(breakfastStart);
-            ////Console.WriteLine($"Breakfast took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
-            ////Console.WriteLine($"Breakfast started at {breakfastStart.ToString(ProcessConstants.DateTimeFormatString)} and took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
-            //Console.WriteLine($"Breakfast started at {breakfastTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
-            //// ***
-            ////Console.WriteLine($"Coffee took {coffeeTook.Seconds} seconds and {coffeeTook.Milliseconds} milliseconds.");
-            ////Console.WriteLine($"Eggs took {eggsTook.Seconds} seconds and {eggsTook.Milliseconds} milliseconds.");
-            ////Console.WriteLine($"Bacon took {baconTook.Seconds} seconds and {baconTook.Milliseconds} milliseconds.");
-            ////Console.WriteLine($"Toast took {toastTook.Seconds} seconds and {toastTook.Milliseconds} milliseconds.");
-            ////Console.WriteLine($"Juice took {juiceTook.Seconds} seconds and {juiceTook.Milliseconds} milliseconds.");
-            //Console.WriteLine($"Coffee started at {coffeeTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {coffeeTook.Seconds} seconds and {coffeeTook.Milliseconds} milliseconds.");
-            //Console.WriteLine($"Eggs started at {eggsTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {eggsTook.Seconds} seconds and {eggsTook.Milliseconds} milliseconds.");
-            //Console.WriteLine($"Bacon started at {baconTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {baconTook.Seconds} seconds and {baconTook.Milliseconds} milliseconds.");
-            //Console.WriteLine($"Toast started at {toastTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {toastTook.Seconds} seconds and {toastTook.Milliseconds} milliseconds.");
-            //Console.WriteLine($"Juice started at {juiceTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {juiceTook.Seconds} seconds and {juiceTook.Milliseconds} milliseconds.");
 
             ProcessHelpers.DisplayTimeStats(clock);
 

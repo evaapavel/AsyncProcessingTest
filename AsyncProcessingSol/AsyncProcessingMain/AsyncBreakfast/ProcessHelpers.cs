@@ -55,7 +55,8 @@ namespace AsyncProcessingMain.AsyncBreakfast
         {
             Stopwatch taskTook = clock.Get(taskName);
             //Console.WriteLine($"{taskName,11} started at {taskTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {taskTook.Seconds,2} seconds and {taskTook.Milliseconds,4} milliseconds.");
-            Console.WriteLine($"{taskDisplay,11} started at {taskTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {taskTook.Seconds,2} seconds and {taskTook.Milliseconds,4} milliseconds.");
+            //Console.WriteLine($"{taskDisplay,11} started at {taskTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {taskTook.Seconds,2} seconds and {taskTook.Milliseconds,4} milliseconds.");
+            Console.WriteLine($"{taskDisplay,-11} started at {taskTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {taskTook.Seconds,2} seconds and {taskTook.Milliseconds,4} milliseconds.");
         }
 
 
