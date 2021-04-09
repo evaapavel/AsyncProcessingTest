@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 
@@ -59,24 +60,52 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
 
 
-            Egg eggs = await eggsTask;
-            Console.WriteLine("eggs are ready");
-            // ***
-            clock.Stop("Egg");
+            //Egg eggs = await eggsTask;
+            //Console.WriteLine("eggs are ready");
+            //// ***
+            //clock.Stop("Egg");
 
 
-            Bacon bacon = await baconTask;
-            Console.WriteLine("bacon is ready");
-            // ***
-            clock.Stop("Bacon");
+            //Bacon bacon = await baconTask;
+            //Console.WriteLine("bacon is ready");
+            //// ***
+            //clock.Stop("Bacon");
 
 
-            Toast toast = await toastTask;
-            //ApplyButter(toast);
-            //ApplyJam(toast);
-            Console.WriteLine("toast is ready");
-            // ***
-            clock.Stop("Toast");
+            //Toast toast = await toastTask;
+            ////ApplyButter(toast);
+            ////ApplyJam(toast);
+            //Console.WriteLine("toast is ready");
+            //// ***
+            //clock.Stop("Toast");
+
+
+            IList<Task> breakfastTasks = new List<Task> { eggsTask, baconTask, toastTask };
+            while (breakfastTasks.Count > 0)
+            {
+                Task finishedTask = await Task.WhenAny(breakfastTasks);
+                if (finishedTask == eggsTask)
+                {
+                    Console.WriteLine("eggs are ready");
+                    // ***
+                    clock.Stop("Egg");
+                }
+                else if (finishedTask == baconTask)
+                {
+                    Console.WriteLine("bacon is ready");
+                    // ***
+                    clock.Stop("Bacon");
+                }
+                else if (finishedTask == toastTask)
+                {
+                    //ApplyButter(toast);
+                    //ApplyJam(toast);
+                    Console.WriteLine("toast is ready");
+                    // ***
+                    clock.Stop("Toast");
+                }
+                breakfastTasks.Remove(finishedTask);
+            }
 
 
             clock.Start("Juice");
