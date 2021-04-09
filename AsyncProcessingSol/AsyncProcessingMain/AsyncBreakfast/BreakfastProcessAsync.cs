@@ -56,8 +56,8 @@ namespace AsyncProcessingMain.AsyncBreakfast
 
             clock.Start("Toast");
             // ***
-            Task<Toast> toastTask = ToastBreadAsync(2);
-            //Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
+            //Task<Toast> toastTask = ToastBreadAsync(2);
+            Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
 
 
             //Egg eggs = await eggsTask;
@@ -73,8 +73,8 @@ namespace AsyncProcessingMain.AsyncBreakfast
 
 
             Toast toast = await toastTask;
-            ApplyButter(toast);
-            ApplyJam(toast);
+            //ApplyButter(toast);
+            //ApplyJam(toast);
             Console.WriteLine("toast is ready");
             // ***
             clock.Stop("Toast");
