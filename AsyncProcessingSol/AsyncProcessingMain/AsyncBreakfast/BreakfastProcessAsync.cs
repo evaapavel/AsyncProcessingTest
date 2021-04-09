@@ -37,10 +37,10 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Task<Egg> eggsTask = FryEggsAsync(2);
 
 
-            Egg eggs = await eggsTask;
-            Console.WriteLine("eggs are ready");
-            // ***
-            clock.Stop("Egg");
+            //Egg eggs = await eggsTask;
+            //Console.WriteLine("eggs are ready");
+            //// ***
+            //clock.Stop("Egg");
 
 
             clock.Start("Bacon");
@@ -48,10 +48,10 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Task<Bacon> baconTask = FryBaconAsync(3);
 
 
-            Bacon bacon = await baconTask;
-            Console.WriteLine("bacon is ready");
-            // ***
-            clock.Stop("Bacon");
+            //Bacon bacon = await baconTask;
+            //Console.WriteLine("bacon is ready");
+            //// ***
+            //clock.Stop("Bacon");
 
 
             clock.Start("Toast");
@@ -116,16 +116,16 @@ namespace AsyncProcessingMain.AsyncBreakfast
             clock.Stop("Juice");
 
 
-            //Egg eggs = await eggsTask;
-            //Console.WriteLine("eggs are ready");
-            //// ***
-            //clock.Stop("Egg");
+            Egg eggs = await eggsTask;
+            Console.WriteLine("eggs are ready");
+            // ***
+            clock.Stop("Egg");
 
 
-            //Bacon bacon = await baconTask;
-            //Console.WriteLine("bacon is ready");
-            //// ***
-            //clock.Stop("Bacon");
+            Bacon bacon = await baconTask;
+            Console.WriteLine("bacon is ready");
+            // ***
+            clock.Stop("Bacon");
 
 
             Console.WriteLine("Breakfast is ready!");
