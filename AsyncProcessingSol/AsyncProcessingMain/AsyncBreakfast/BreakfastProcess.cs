@@ -26,7 +26,6 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Console.WriteLine("coffee is ready");
             // ***
             TimeSpan coffeeTook = clock.StopAndGetTook("Coffee");
-            Console.WriteLine($"Coffee took {coffeeTook.Seconds} seconds and {coffeeTook.Milliseconds} milliseconds.");
 
 
             clock.Start("Egg");
@@ -35,7 +34,6 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Console.WriteLine("eggs are ready");
             // ***
             TimeSpan eggsTook = clock.StopAndGetTook("Egg");
-            Console.WriteLine($"Eggs took {eggsTook.Seconds} seconds and {eggsTook.Milliseconds} milliseconds.");
 
 
             clock.Start("Bacon");
@@ -44,7 +42,6 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Console.WriteLine("bacon is ready");
             // ***
             TimeSpan baconTook = clock.StopAndGetTook("Bacon");
-            Console.WriteLine($"Bacon took {baconTook.Seconds} seconds and {baconTook.Milliseconds} milliseconds.");
 
 
             clock.Start("Toast");
@@ -55,7 +52,6 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Console.WriteLine("toast is ready");
             // ***
             TimeSpan toastTook = clock.StopAndGetTook("Toast");
-            Console.WriteLine($"Toast took {toastTook.Seconds} seconds and {toastTook.Milliseconds} milliseconds.");
 
 
             clock.Start("Juice");
@@ -64,7 +60,6 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Console.WriteLine("oj is ready");
             // ***
             TimeSpan juiceTook = clock.StopAndGetTook("Juice");
-            Console.WriteLine($"Juice took {juiceTook.Seconds} seconds and {juiceTook.Milliseconds} milliseconds.");
 
 
             Console.WriteLine("Breakfast is ready!");
@@ -72,6 +67,12 @@ namespace AsyncProcessingMain.AsyncBreakfast
             DateTime breakfastDone = DateTime.Now;
             TimeSpan breakfastTook = breakfastDone.Subtract(breakfastStart);
             Console.WriteLine($"Breakfast took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
+            // ***
+            Console.WriteLine($"Coffee took {coffeeTook.Seconds} seconds and {coffeeTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Eggs took {eggsTook.Seconds} seconds and {eggsTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Bacon took {baconTook.Seconds} seconds and {baconTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Toast took {toastTook.Seconds} seconds and {toastTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Juice took {juiceTook.Seconds} seconds and {juiceTook.Milliseconds} milliseconds.");
 
         }
 
@@ -132,7 +133,7 @@ namespace AsyncProcessingMain.AsyncBreakfast
         {
             Console.WriteLine("Warming the egg pan...");
             Task.Delay(3000).Wait();
-            Console.WriteLine($"craking {howMany} eggs");
+            Console.WriteLine($"cracking {howMany} eggs");
             Console.WriteLine("cooking the eggs...");
             Task.Delay(3000).Wait();
             Console.WriteLine("Put eggs on plate");
