@@ -30,20 +30,14 @@ namespace AsyncProcessingMain.AsyncBreakfast
 
             clock.Start("Egg");
             // ***
-            //Egg eggs = FryEggs(2);
-            //Egg eggs = await FryEggsAsync(2);
             Task<Egg> eggsTask = FryEggsAsync(2);
 
             clock.Start("Bacon");
             // ***
-            //Bacon bacon = FryBacon(3);
-            //Bacon bacon = await FryBaconAsync(3);
             Task<Bacon> baconTask = FryBaconAsync(3);
 
             clock.Start("Toast");
             // ***
-            //Toast toast = ToastBread(2);
-            //Toast toast = await ToastBreadAsync(2);
             //Task<Toast> toastTask = ToastBreadAsync(2);
             Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
 
