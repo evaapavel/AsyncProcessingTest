@@ -34,9 +34,13 @@ namespace AsyncProcessingMain
 
 
 
-        public static void Main(string[] args)
+        //public static void Main(string[] args)
+        //{
+        //    MainAsync(args);
+        //}
+        public static async Task Main(string[] args)
         {
-            MainAsync(args);
+            await MainAsync(args);
         }
 
 
