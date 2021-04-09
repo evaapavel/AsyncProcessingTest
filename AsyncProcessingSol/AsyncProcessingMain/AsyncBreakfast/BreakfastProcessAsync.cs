@@ -80,18 +80,18 @@ namespace AsyncProcessingMain.AsyncBreakfast
             DateTime breakfastDone = DateTime.Now;
             TimeSpan breakfastTook = breakfastDone.Subtract(breakfastStart);
             //Console.WriteLine($"Breakfast took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
-            Console.WriteLine($"Breakfast started at {breakfastStart.ToString("dd.MM.yyyy HH:mm:ss.fff")} and took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Breakfast started at {breakfastStart.ToString(ProcessConstants.DateTimeFormatString)} and took {breakfastTook.Seconds} seconds and {breakfastTook.Milliseconds} milliseconds.");
             // ***
             //Console.WriteLine($"Coffee took {coffeeTook.Seconds} seconds and {coffeeTook.Milliseconds} milliseconds.");
             //Console.WriteLine($"Eggs took {eggsTook.Seconds} seconds and {eggsTook.Milliseconds} milliseconds.");
             //Console.WriteLine($"Bacon took {baconTook.Seconds} seconds and {baconTook.Milliseconds} milliseconds.");
             //Console.WriteLine($"Toast took {toastTook.Seconds} seconds and {toastTook.Milliseconds} milliseconds.");
             //Console.WriteLine($"Juice took {juiceTook.Seconds} seconds and {juiceTook.Milliseconds} milliseconds.");
-            Console.WriteLine($"Coffee started at {coffeeTook.StartTime.ToString("dd.MM.yyyy HH:mm:ss.fff")} and took {coffeeTook.Seconds} seconds and {coffeeTook.Milliseconds} milliseconds.");
-            Console.WriteLine($"Eggs started at {eggsTook.StartTime.ToString("dd.MM.yyyy HH:mm:ss.fff")} and took {eggsTook.Seconds} seconds and {eggsTook.Milliseconds} milliseconds.");
-            Console.WriteLine($"Bacon started at {baconTook.StartTime.ToString("dd.MM.yyyy HH:mm:ss.fff")} and took {baconTook.Seconds} seconds and {baconTook.Milliseconds} milliseconds.");
-            Console.WriteLine($"Toast started at {toastTook.StartTime.ToString("dd.MM.yyyy HH:mm:ss.fff")} and took {toastTook.Seconds} seconds and {toastTook.Milliseconds} milliseconds.");
-            Console.WriteLine($"Juice started at {juiceTook.StartTime.ToString("dd.MM.yyyy HH:mm:ss.fff")} and took {juiceTook.Seconds} seconds and {juiceTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Coffee started at {coffeeTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {coffeeTook.Seconds} seconds and {coffeeTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Eggs started at {eggsTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {eggsTook.Seconds} seconds and {eggsTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Bacon started at {baconTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {baconTook.Seconds} seconds and {baconTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Toast started at {toastTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {toastTook.Seconds} seconds and {toastTook.Milliseconds} milliseconds.");
+            Console.WriteLine($"Juice started at {juiceTook.StartTime.ToString(ProcessConstants.DateTimeFormatString)} and took {juiceTook.Seconds} seconds and {juiceTook.Milliseconds} milliseconds.");
 
         }
 

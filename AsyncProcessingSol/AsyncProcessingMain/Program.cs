@@ -39,18 +39,19 @@ namespace AsyncProcessingMain
         //{
         //    MainAsync(args);
         //}
-        public static async Task Main(string[] args)
-        {
-            await MainAsync(args);
-        }
+
+        //public static async Task Main(string[] args)
+        //{
+        //    await MainAsync(args);
+        //}
         //public static async Task Main(string[] args)
         //{
         //    await BreakfastProcessAsync.MakeBreakfastAsync();
         //}
-        //public static void Main(string[] args)
-        //{
-        //    BreakfastProcess.MakeBreakfast();
-        //}
+        public static void Main(string[] args)
+        {
+            BreakfastProcess.MakeBreakfast();
+        }
 
 
 
