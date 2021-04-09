@@ -17,23 +17,55 @@ namespace AsyncProcessingMain.AsyncBreakfast
         {
 
             DateTime breakfastStart = DateTime.Now;
+            MultiStopwatch clock = new MultiStopwatch();
 
+
+            clock.Start("Coffee");
+            // ***
             Coffee cup = PourCoffee();
             Console.WriteLine("coffee is ready");
+            // ***
+            TimeSpan coffeeTook = clock.StopAndGetTook("Coffee");
+            Console.WriteLine($"Coffee took {coffeeTook.Seconds} seconds and {coffeeTook.Milliseconds} milliseconds.");
 
+
+            clock.Start("Egg");
+            // ***
             Egg eggs = FryEggs(2);
             Console.WriteLine("eggs are ready");
+            // ***
+            TimeSpan eggsTook = clock.StopAndGetTook("Egg");
+            Console.WriteLine($"Eggs took {eggsTook.Seconds} seconds and {eggsTook.Milliseconds} milliseconds.");
 
+
+            clock.Start("Bacon");
+            // ***
             Bacon bacon = FryBacon(3);
             Console.WriteLine("bacon is ready");
+            // ***
+            TimeSpan baconTook = clock.StopAndGetTook("Bacon");
+            Console.WriteLine($"Bacon took {baconTook.Seconds} seconds and {baconTook.Milliseconds} milliseconds.");
 
+
+            clock.Start("Toast");
+            // ***
             Toast toast = ToastBread(2);
             ApplyButter(toast);
             ApplyJam(toast);
             Console.WriteLine("toast is ready");
+            // ***
+            TimeSpan toastTook = clock.StopAndGetTook("Toast");
+            Console.WriteLine($"Toast took {toastTook.Seconds} seconds and {toastTook.Milliseconds} milliseconds.");
 
+
+            clock.Start("Juice");
+            // ***
             Juice oj = PourOJ();
             Console.WriteLine("oj is ready");
+            // ***
+            TimeSpan juiceTook = clock.StopAndGetTook("Juice");
+            Console.WriteLine($"Juice took {juiceTook.Seconds} seconds and {juiceTook.Milliseconds} milliseconds.");
+
 
             Console.WriteLine("Breakfast is ready!");
 
