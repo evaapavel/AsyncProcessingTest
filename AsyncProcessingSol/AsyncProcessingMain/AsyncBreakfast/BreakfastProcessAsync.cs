@@ -37,10 +37,10 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Task<Egg> eggsTask = FryEggsAsync(2);
 
 
-            //Egg eggs = await eggsTask;
-            //Console.WriteLine("eggs are ready");
-            //// ***
-            //clock.Stop("Egg");
+            Egg eggs = await eggsTask;
+            Console.WriteLine("eggs are ready");
+            // ***
+            clock.Stop("Egg");
 
 
             clock.Start("Bacon");
@@ -48,16 +48,16 @@ namespace AsyncProcessingMain.AsyncBreakfast
             Task<Bacon> baconTask = FryBaconAsync(3);
 
 
-            //Bacon bacon = await baconTask;
-            //Console.WriteLine("bacon is ready");
-            //// ***
-            //clock.Stop("Bacon");
+            Bacon bacon = await baconTask;
+            Console.WriteLine("bacon is ready");
+            // ***
+            clock.Stop("Bacon");
 
 
             clock.Start("Toast");
             // ***
-            //Task<Toast> toastTask = ToastBreadAsync(2);
-            Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
+            Task<Toast> toastTask = ToastBreadAsync(2);
+            //Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
 
 
             //Egg eggs = await eggsTask;
@@ -72,40 +72,40 @@ namespace AsyncProcessingMain.AsyncBreakfast
             //clock.Stop("Bacon");
 
 
-            //Toast toast = await toastTask;
-            ////ApplyButter(toast);
-            ////ApplyJam(toast);
-            //Console.WriteLine("toast is ready");
-            //// ***
-            //clock.Stop("Toast");
+            Toast toast = await toastTask;
+            ApplyButter(toast);
+            ApplyJam(toast);
+            Console.WriteLine("toast is ready");
+            // ***
+            clock.Stop("Toast");
 
 
-            IList<Task> breakfastTasks = new List<Task> { eggsTask, baconTask, toastTask };
-            while (breakfastTasks.Count > 0)
-            {
-                Task finishedTask = await Task.WhenAny(breakfastTasks);
-                if (finishedTask == eggsTask)
-                {
-                    Console.WriteLine("eggs are ready");
-                    // ***
-                    clock.Stop("Egg");
-                }
-                else if (finishedTask == baconTask)
-                {
-                    Console.WriteLine("bacon is ready");
-                    // ***
-                    clock.Stop("Bacon");
-                }
-                else if (finishedTask == toastTask)
-                {
-                    //ApplyButter(toast);
-                    //ApplyJam(toast);
-                    Console.WriteLine("toast is ready");
-                    // ***
-                    clock.Stop("Toast");
-                }
-                breakfastTasks.Remove(finishedTask);
-            }
+            //IList<Task> breakfastTasks = new List<Task> { eggsTask, baconTask, toastTask };
+            //while (breakfastTasks.Count > 0)
+            //{
+            //    Task finishedTask = await Task.WhenAny(breakfastTasks);
+            //    if (finishedTask == eggsTask)
+            //    {
+            //        Console.WriteLine("eggs are ready");
+            //        // ***
+            //        clock.Stop("Egg");
+            //    }
+            //    else if (finishedTask == baconTask)
+            //    {
+            //        Console.WriteLine("bacon is ready");
+            //        // ***
+            //        clock.Stop("Bacon");
+            //    }
+            //    else if (finishedTask == toastTask)
+            //    {
+            //        //ApplyButter(toast);
+            //        //ApplyJam(toast);
+            //        Console.WriteLine("toast is ready");
+            //        // ***
+            //        clock.Stop("Toast");
+            //    }
+            //    breakfastTasks.Remove(finishedTask);
+            //}
 
 
             clock.Start("Juice");
@@ -142,18 +142,35 @@ namespace AsyncProcessingMain.AsyncBreakfast
         private static Juice PourOJ()
         {
             Console.WriteLine("Pouring orange juice");
+            // ***
+            Task.Delay(3000).Wait();
+            // ***
             return new Juice();
         }
 
 
 
-        private static void ApplyJam(Toast toast) =>
+        //private static void ApplyJam(Toast toast) =>
+        //    Console.WriteLine("Putting jam on the toast");
+        private static void ApplyJam(Toast toast)
+        {
             Console.WriteLine("Putting jam on the toast");
+            // ***
+            Task.Delay(3000).Wait();
+            // ***
+        }
 
 
 
-        private static void ApplyButter(Toast toast) =>
+        //private static void ApplyButter(Toast toast) =>
+        //    Console.WriteLine("Putting butter on the toast");
+        private static void ApplyButter(Toast toast)
+        {
             Console.WriteLine("Putting butter on the toast");
+            // ***
+            Task.Delay(3000).Wait();
+            // ***
+        }
 
 
 
@@ -223,6 +240,9 @@ namespace AsyncProcessingMain.AsyncBreakfast
         private static Coffee PourCoffee()
         {
             Console.WriteLine("Pouring coffee");
+            // ***
+            Task.Delay(3000).Wait();
+            // ***
             return new Coffee();
         }
 
